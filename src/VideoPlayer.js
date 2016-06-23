@@ -1,5 +1,6 @@
 import './VideoPlayer.scss';
 
+import React from 'react';
 import { findDOMNode } from 'react-dom';
 
 import videojs from 'video.js/dist/alt/video.novtt.js';
