@@ -17,8 +17,7 @@ class VideoPlayer extends React.Component {
       controls: true,
       controlBar: {
         fullscreenToggle: false,
-        remainingTimeDisplay: false,
-        currentTimeDisplay: true,
+        remainingTimeDisplay: true,
         volumeMenuButton: {
           inline: false
         }
