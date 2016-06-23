@@ -1,0 +1,34 @@
+{
+  "name": "orson",
+  "version": "0.0.1",
+  "description": "React video component with some Articulate flavor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/articulate/orson.git"
+  },
+  "keywords": [
+    "react",
+    "video.js"
+  ],
+  "author": "Articulate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/articulate/orson/issues"
+  },
+  "homepage": "https://github.com/articulate/orson#readme",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "video.js": "^5.10.4"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "webpack": "^1.13.1"
+  }
+}

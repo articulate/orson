@@ -1,0 +1,73 @@
+$icon-font-path: '~videojs-font/fonts';
+@import '~video.js/src/css/vjs';
+
+$primary-foreground-color: #fff;
+$primary-background-color: #313537;
+$slider-bg-color: #a6a6a6;
+
+.video-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+
+  // Font size base for text and icons
+  font-size: 10px;
+  color: $primary-foreground-color;
+
+  .vjs-control-bar {
+    display: flex;
+    height: 7.5em;
+
+    // Button icon sizing
+    .vjs-button {
+      font-size: 1.2em;
+      &::before {
+        line-height: 3.5;
+      }
+    }
+
+    // Individual Button stylez
+    .vjs-volume-menu-button {
+      order: 3;
+
+      // Pad vertical vol control
+      .vjs-menu-content {
+        bottom: 2.5em;
+      }
+    }
+
+    // Slider
+    .vjs-slider {
+      background-color: $slider-bg-color;
+
+      .vjs-play-progress {
+        // Scrubber grabber sizing (circle)
+        &::before {
+          font-size: 1.4em;
+        }
+      }
+
+      .vjs-load-progress {
+        background: rgba($slider-bg-color, 0.5);
+        div {
+          background: rgba($slider-bg-color, 0.75);
+        }
+      }
+    }
+
+    // Overrides
+    // Disable onFocus button highlighting
+    .vjs-control:focus::before,
+    .vjs-control:hover::before,
+    .vjs-control:focus {
+      text-shadow: none;
+    }
+
+    // Disable zoom onHover
+    .vjs-progress-control:hover .vjs-progress-holder {
+      font-size: inherit;
+    }
+  }
+}
