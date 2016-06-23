@@ -2,7 +2,7 @@
   "name": "orson",
   "version": "0.0.1",
   "description": "React video component with some Articulate flavor",
-  "main": "build/index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack",
     "clean": "rm -rf dist",
