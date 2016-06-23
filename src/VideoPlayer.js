@@ -1,5 +1,3 @@
-import './VideoPlayer.scss';
-
 import { findDOMNode } from 'react-dom';
 import videojs from 'video.js';
 
