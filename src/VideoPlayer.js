@@ -5,7 +5,7 @@ class VideoPlayer extends React.Component {
   }
 
   componentDidMount() {
-    let video = this.refs.video;
+    let { ref } = this.props;
     let options = {
       bigPlayButton: false,
       preload: 'auto',
@@ -18,12 +18,13 @@ class VideoPlayer extends React.Component {
         }
       }
     };
-    this.state.video = videojs(video, options);
+    this.state.video = videojs(ref, options);
   }
 
   render() {
+    let { ref } = this.props;
     return (
-      <video className="video-js vjs-skin-articulate" ref="video">
+      <video className="video-js vjs-skin-articulate" ref={ref}>
         {this.props.children}
       </video>
     );

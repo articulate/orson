@@ -27,7 +27,8 @@ var VideoPlayer = function (_React$Component) {
   _createClass(VideoPlayer, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var video = this.refs.video;
+      var ref = this.props.ref;
+
       var options = {
         bigPlayButton: false,
         preload: 'auto',
@@ -40,14 +41,16 @@ var VideoPlayer = function (_React$Component) {
           }
         }
       };
-      this.state.video = videojs(video, options);
+      this.state.video = videojs(ref, options);
     }
   }, {
     key: "render",
     value: function render() {
+      var ref = this.props.ref;
+
       return React.createElement(
         "video",
-        { className: "video-js vjs-skin-articulate", ref: "video" },
+        { className: "video-js vjs-skin-articulate", ref: ref },
         this.props.children
       );
     }
