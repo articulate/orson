@@ -22,14 +22,14 @@ var VideoPlayer = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(VideoPlayer).call(this));
 
-    _this.state = { player: {} };
+    _this.state = {};
     return _this;
   }
 
   _createClass(VideoPlayer, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var player = (0, _reactDom.findDOMNode)(this.refs.player);
+      var video = (0, _reactDom.findDOMNode)(this.refs.video);
       var options = {
         bigPlayButton: false,
         preload: 'auto',
@@ -42,14 +42,14 @@ var VideoPlayer = function (_React$Component) {
           }
         }
       };
-      this.state.player = videojs(player, options);
+      this.state.video = videojs(video, options);
     }
   }, {
     key: 'render',
     value: function render() {
       return React.createElement(
         'video',
-        { className: 'video-js vjs-skin-articulate', ref: 'player' },
+        { className: 'video-js vjs-skin-articulate', ref: 'video' },
         this.props.children
       );
     }
