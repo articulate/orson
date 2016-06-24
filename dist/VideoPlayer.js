@@ -1,12 +1,10 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _reactDom = require('react-dom');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -27,9 +25,9 @@ var VideoPlayer = function (_React$Component) {
   }
 
   _createClass(VideoPlayer, [{
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
-      var video = (0, _reactDom.findDOMNode)(this.refs.video);
+      var video = this.refs.video;
       var options = {
         bigPlayButton: false,
         preload: 'auto',
@@ -45,11 +43,11 @@ var VideoPlayer = function (_React$Component) {
       this.state.video = videojs(video, options);
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'video',
-        { className: 'video-js vjs-skin-articulate', ref: 'video' },
+        "video",
+        { className: "video-js vjs-skin-articulate", ref: "video" },
         this.props.children
       );
     }

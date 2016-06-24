@@ -1,5 +1,3 @@
-import { findDOMNode } from 'react-dom';
-
 class VideoPlayer extends React.Component {
   constructor() {
     super();
@@ -7,7 +5,7 @@ class VideoPlayer extends React.Component {
   }
 
   componentDidMount() {
-    let video = findDOMNode(this.refs.video);
+    let video = this.refs.video;
     let options = {
       bigPlayButton: false,
       preload: 'auto',
