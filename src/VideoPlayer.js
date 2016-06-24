@@ -1,5 +1,3 @@
-import './VideoPlayer.scss';
-
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 

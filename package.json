@@ -4,8 +4,8 @@
   "description": "React video component with some Articulate flavor",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack",
-    "babel": "babel src -d lib",
+    "build:webpack": "webpack",
+    "build:babel": "babel src -d lib",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "test": "echo \"Error: no test specified\" && exit 1"
