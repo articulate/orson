@@ -3,8 +3,6 @@ import './VideoPlayer.scss';
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 
-import videojs from 'video.js/dist/alt/video.novtt.js';
-
 class VideoPlayer extends React.Component {
   constructor() {
     super();
