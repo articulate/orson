@@ -7,9 +7,6 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js'
   },
-  babel: {
-    presets: ["react", "es2015"]
-  },
   module: {
     loaders: [
       {
