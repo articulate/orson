@@ -4,7 +4,7 @@
   "description": "React video component with some Articulate flavor",
   "main": "dist/index.js",
   "scripts": {
-    "build:babel": "babel src -d dist",
+    "build": "babel src -d dist",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,3 +1,5 @@
+import { findDOMNode } from 'react';
+
 class VideoPlayer extends React.Component {
   constructor() {
     super();
@@ -18,7 +20,7 @@ class VideoPlayer extends React.Component {
         }
       }
     };
-    this.state.video = videojs(ref, options);
+    this.state.video = videojs(findDOMNode(ref), options);
   }
 
   render() {
