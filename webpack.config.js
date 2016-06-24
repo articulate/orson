@@ -10,11 +10,6 @@ module.exports = {
   babel: {
     presets: ["react", "es2015"]
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      'videojs': 'video.js'
-    })
-  ],
   module: {
     loaders: [
       {
