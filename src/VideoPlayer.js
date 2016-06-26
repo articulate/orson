@@ -1,4 +1,4 @@
-import { findDOMNode } from 'react';
+import { findDOMNode } from 'react-dom';
 
 class VideoPlayer extends React.Component {
   constructor() {
