@@ -1,13 +1,12 @@
-import { findDOMNode } from 'react-dom';
-
 class VideoPlayer extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {video: {}};
   }
 
   componentDidMount() {
-    let { ref } = this.props;
+    console.log('componentDidMount... ed');
+
     let options = {
       bigPlayButton: false,
       preload: 'auto',
@@ -20,13 +19,15 @@ class VideoPlayer extends React.Component {
         }
       }
     };
-    this.state.video = videojs(findDOMNode(ref), options);
+
+    let video = videojs(this.refs.player, options);
+
+    this.setState({ video });
   }
 
   render() {
-    let { ref } = this.props;
     return (
-      <video className="video-js vjs-skin-articulate" ref={ref}>
+      <video className="video-js vjs-skin-articulate" ref="player">
         {this.props.children}
       </video>
     );
