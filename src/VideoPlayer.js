@@ -4,12 +4,12 @@ import './VideoPlayer.scss';
 class VideoPlayer extends React.Component {
   constructor() {
     super();
-    this.state = {video: {}};
+    this.state = {};
   }
 
   static defaultProps = {
+    aspectRatio: ( 9 / 16 ),
     options: {
-      bigPlayButton: false,
       preload: 'auto',
       controls: true,
       controlBar: {
@@ -23,8 +23,8 @@ class VideoPlayer extends React.Component {
   }
 
   static propTypes = {
+    aspectRatio: React.PropTypes.number,
     options: React.PropTypes.shape({
-      bigPlayButton: React.PropTypes.bool,
       bigPlayButton: React.PropTypes.bool,
       preload: React.PropTypes.string,
       controls: React.PropTypes.bool,
@@ -33,16 +33,24 @@ class VideoPlayer extends React.Component {
   }
 
   componentDidMount() {
-    let { options } = this.props;
-    let video = vjs(this.video, options);
+    let video = vjs(this.video, this.props.options);
+    this.setDimensions();
     this.setState({ video });
+  }
+
+  setDimensions() {
+    let width = this.video.clientWidth;
+    let height = (this.props.aspectRatio * width);
+    this.setState({ dimensions: { width, height } });
   }
 
   render() {
     return (
-      <video className="video-js vjs-skin-articulate" ref={(node) => { this.video = node; }}>
-        {this.props.children}
-      </video>
+      <div className="videoContainer" style={this.state.dimensions}>
+        <video className="video-js" ref={(node) => { this.video = node; }}>
+          {this.props.children}
+        </video>
+      </div>
     );
   }
 }
