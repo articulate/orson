@@ -1,11 +1,14 @@
+import vjs from 'video.js/dist/alt/video.novtt';
+import './VideoPlayer.scss';
+
 class VideoPlayer extends React.Component {
   constructor() {
     super();
     this.state = {video: {}};
   }
 
-  componentDidMount() {
-    let options = {
+  static defaultProps = {
+    options: {
       bigPlayButton: false,
       preload: 'auto',
       controls: true,
@@ -16,10 +19,22 @@ class VideoPlayer extends React.Component {
           inline: false
         }
       }
-    };
+    }
+  }
 
-    let video = videojs(this.video, options);
+  static propTypes = {
+    options: React.PropTypes.shape({
+      bigPlayButton: React.PropTypes.bool,
+      bigPlayButton: React.PropTypes.bool,
+      preload: React.PropTypes.string,
+      controls: React.PropTypes.bool,
+      controlBar: React.PropTypes.object
+    })
+  }
 
+  componentDidMount() {
+    let { options } = this.props;
+    let video = vjs(this.video, options);
     this.setState({ video });
   }
 
