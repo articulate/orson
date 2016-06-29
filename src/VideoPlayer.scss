@@ -2,8 +2,13 @@ $icon-font-path: '~videojs-font/fonts';
 @import '~video.js/src/css/vjs';
 
 $primary-foreground-color: #fff;
-$primary-background-color: #313537;
+$primary-background-color: rgba(0, 0, 0, .3);
 $slider-bg-color: #a6a6a6;
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+}
 
 .video-js {
   position: absolute;
@@ -16,8 +21,27 @@ $slider-bg-color: #a6a6a6;
   font-size: 10px;
   color: $primary-foreground-color;
 
-  // Control Bar
-  .vjs-control-bar {
+  // Big Play Button
+  .vjs-big-play-button {
+    $btn-size: 9.8rem;
+
+    position: relative;
+    background-color: $primary-background-color;
+    border: none;
+    border-radius: 50%;
+    height: $btn-size;
+    width: $btn-size;
+    font-size: 2.4em;
+    line-height: 3.75;
+    top: 0;
+    left: 0;
+
+    margin: 20% auto;
+  }
+
+  // Control Bar - show onPlay and onPause
+  &.vjs-has-started .vjs-control-bar {
+    background-color: $primary-background-color;
     display: flex;
     height: 7.5em;
 
@@ -27,6 +51,11 @@ $slider-bg-color: #a6a6a6;
       &::before {
         line-height: 3.5;
       }
+    }
+
+    // Time control
+    .vjs-time-control {
+      line-height: 7.35;
     }
 
     // Individual Button stylez
