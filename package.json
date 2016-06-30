@@ -2,9 +2,8 @@
   "name": "@articulate/orson",
   "version": "0.0.1",
   "description": "React video component with some Articulate flavor",
-  "main": "dist/index.js",
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel lib -d dist",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "test": "echo \"Error: no test specified\" && exit 1"
