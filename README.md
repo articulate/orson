@@ -39,6 +39,6 @@ import VideoPlayer from '@articulate/orson/lib/VideoPlayer';
 ## Available Props
 These props are not required, but available if needed.
 
-- `aspectRatio` - a number, defualts to `(3 / 4)` or `.75`
+- `aspectRatio` - a number, defualts to `(9 / 16)`
 - `options` - video.js options used to create the player object.  See [Videojs Options](http://docs.videojs.com/docs/guides/options.html#component-options)
 
