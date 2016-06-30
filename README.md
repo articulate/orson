@@ -15,7 +15,6 @@ Update your webpack config loaders
   loader: 'babel-loader',
   include: path.join(__dirname, 'node_modules', '@articulate', 'orson')
 },
-
 {
   test: /\.eot$/,
   loader: 'url-loader'
