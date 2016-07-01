@@ -26,7 +26,7 @@ $slider-bg-color: #a6a6a6;
   .vjs-big-play-button {
     $big-btn-size: 9.8rem;
 
-    font-size: 2.4em;
+    font-size: 4em;
 
     line-height: $big-btn-size;
     height: $big-btn-size;
@@ -60,7 +60,10 @@ $slider-bg-color: #a6a6a6;
 
     // Time control
     .vjs-time-control {
-      line-height: 7.35;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 1.2em;
+      line-height: 6.35;
     }
 
     // Individual Button stylez
@@ -82,6 +85,17 @@ $slider-bg-color: #a6a6a6;
         &::before {
           font-size: 1.4em;
         }
+
+        // Scrubber time display
+        &::after {
+          font-family: 'Lato', sans-serif;
+          font-weight: 700;
+          background-color: rgba(49, 53, 55, .6);
+          border-radius: 2em;
+          color: $primary-foreground-color;
+          font-size: 1.2em;
+          padding: 0.2em 1em;
+        }
       }
 
       .vjs-load-progress {
@@ -101,17 +115,16 @@ $slider-bg-color: #a6a6a6;
       text-shadow: none;
     }
 
-    // Disable scrubber time
     .vjs-progress-control:hover {
-      background-color: pink;
+      // Disable scrubber time
       .vjs-mouse-display::after {
         visibility: hidden;
       }
-    }
 
-    // Disable zoom onHover
-    .vjs-progress-control:hover .vjs-progress-holder {
-      font-size: inherit;
+      // Disable zoom onHover
+      .vjs-progress-holder {
+        font-size: inherit;
+      }
     }
   }
 }
