@@ -11,32 +11,37 @@ $slider-bg-color: #a6a6a6;
 }
 
 .video-js {
+  font-size: 10px;
+  color: $primary-foreground-color;
+}
+
+.vjs-default-skin {
   position: absolute;
   top: 0;
   left: 0;
   width: 100% !important;
   height: 100% !important;
 
-  // Font size base for text and icons
-  font-size: 10px;
-  color: $primary-foreground-color;
-
   // Big Play Button
   .vjs-big-play-button {
-    $btn-size: 9.8rem;
+    $big-play-size: 9.8rem;
 
-    position: relative;
-    background-color: $primary-background-color;
-    border: none;
-    border-radius: 50%;
+    font-size: 2.4em;
+
+    line-height: $big-play-size;
     height: $btn-size;
     width: $btn-size;
-    font-size: 2.4em;
-    line-height: 3.75;
-    top: 0;
-    left: 0;
 
-    margin: 20% auto;
+    background-color: $primary-background-color;
+
+    border: none;
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    margin-top: -($big-play-size / 2);
+    margin-left: -($big-play-size / 2);
   }
 
   // Control Bar - show onPlay and onPause
@@ -88,11 +93,20 @@ $slider-bg-color: #a6a6a6;
     }
 
     // Overrides
+
     // Disable onFocus button highlighting
     .vjs-control:focus::before,
     .vjs-control:hover::before,
     .vjs-control:focus {
       text-shadow: none;
+    }
+
+    // Disable scrubber time
+    .vjs-progress-control:hover {
+      background-color: pink;
+      .vjs-mouse-display::after {
+        visibility: hidden;
+      }
     }
 
     // Disable zoom onHover
