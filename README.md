@@ -2,11 +2,12 @@
 
 An Articulate flavored react component video player.
 
+## Install
+`npm install @articulate/orson`
+
 ## Usage
-
-Install `orson` and `video.js` into your project.
-
-`npm install --save @articulate/orson video.js`
+Orson requires the installation of [video.js](http://videojs.com/).
+`npm install video.js`
 
 Update your webpack config loaders
 ```
