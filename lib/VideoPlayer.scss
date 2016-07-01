@@ -24,13 +24,13 @@ $slider-bg-color: #a6a6a6;
 
   // Big Play Button
   .vjs-big-play-button {
-    $big-play-size: 9.8rem;
+    $big-btn-size: 9.8rem;
 
     font-size: 2.4em;
 
-    line-height: $big-play-size;
-    height: $btn-size;
-    width: $btn-size;
+    line-height: $big-btn-size;
+    height: $big-btn-size;
+    width: $big-btn-size;
 
     background-color: $primary-background-color;
 
