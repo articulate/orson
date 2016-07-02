@@ -42,6 +42,11 @@ $slider-bg-color: #a6a6a6;
 
     margin-top: -($big-btn-size / 2);
     margin-left: -($big-btn-size / 2);
+
+    // Show big play onPause
+    .vjs-paused.vjs-has-started & {
+      display: block;
+    }
   }
 
   // Control Bar - show onPlay and onPause
