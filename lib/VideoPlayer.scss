@@ -3,7 +3,8 @@ $icon-font-path: '~videojs-font/fonts';
 
 $primary-foreground-color: #fff;
 $primary-background-color: rgba(0, 0, 0, .3);
-$slider-bg-color: #a6a6a6;
+$slider-bg-color: #fff;
+$slider-height: 0.2em;
 
 .videoContainer {
   position: relative;
@@ -64,6 +65,11 @@ $slider-bg-color: #a6a6a6;
       }
     }
 
+    // Control bar button sizing
+    .vjs-control {
+      margin: 0 0.5em;
+    }
+
     // Time control
     .vjs-time-control {
       font-family: 'Lato', sans-serif;
@@ -84,12 +90,17 @@ $slider-bg-color: #a6a6a6;
 
     // Slider
     .vjs-slider {
-      background-color: $slider-bg-color;
+      background-color: none;
+      margin: 0 1.5em;
+      height: $slider-height;
 
       .vjs-play-progress {
+        height: $slider-height;
+
         // Scrubber grabber sizing (circle)
         &::before {
           font-size: 1.4em;
+          line-height: 0.9;
         }
 
         // Scrubber time display
@@ -105,10 +116,8 @@ $slider-bg-color: #a6a6a6;
       }
 
       .vjs-load-progress {
-        background: rgba($slider-bg-color, 0.5);
-        div {
-          background: rgba($slider-bg-color, 0.75);
-        }
+        background-color: rgba($slider-bg-color, 0.3);
+        height: $slider-height;
       }
     }
 
