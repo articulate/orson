@@ -1,6 +1,6 @@
 {
   "name": "@articulate/orson",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "React video component with some Articulate flavor",
   "scripts": {
     "build": "babel lib -d dist",
