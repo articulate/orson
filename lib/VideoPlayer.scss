@@ -78,16 +78,6 @@ $slider-height: 0.2em;
       line-height: 6.35;
     }
 
-    // Individual Button stylez
-    .vjs-volume-menu-button {
-      order: 3;
-
-      // Pad vertical vol control
-      .vjs-menu-content {
-        bottom: 2.5em;
-      }
-    }
-
     // Slider
     .vjs-slider {
       background-color: none;
@@ -122,8 +112,31 @@ $slider-height: 0.2em;
       }
     }
 
-    // Overrides
+    // Volume Control
+    .vjs-volume-menu-button {
+      $slider-width: 2px;
+      order: 3;
 
+      // Vertical Slider
+      .vjs-menu-content {
+        bottom: 3em;
+        padding: 1rem 0;
+
+        .vjs-slider {
+          height: 100%;
+          width: $slider-width;
+
+          .vjs-volume-level {
+            width: $slider-width;
+            &::before {
+              left: -0.4em;
+            }
+          }
+        }
+      }
+    }
+
+    // Overrides
     // Disable onFocus button highlighting
     .vjs-control:focus::before,
     .vjs-control:hover::before,
