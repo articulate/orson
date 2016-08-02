@@ -26,7 +26,7 @@ Update your webpack config loaders
 
 Import `VideoPlayer` into your component.
 ```
-import VideoPlayer from '@articulate/orson/lib/VideoPlayer';
+import VideoPlayer from '@articulate/orson';
 
 <VideoPlayer>
   <source src="__path_to_mp4__" type="video/mp4" />
@@ -42,4 +42,3 @@ These props are not required, but available if needed.
 
 - `aspectRatio` - a number, defualts to `(9 / 16)`
 - `options` - video.js options used to create the player object.  See [Videojs Options](http://docs.videojs.com/docs/guides/options.html#component-options)
-
