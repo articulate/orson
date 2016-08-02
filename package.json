@@ -8,6 +8,7 @@
     "prebuild": "npm run clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "lib/VideoPlayer",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/articulate/orson.git"
