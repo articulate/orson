@@ -6,23 +6,17 @@ An Articulate flavored react component video player.
 `npm install @articulate/orson`
 
 ## Usage
-Orson requires the installation of [video.js](http://videojs.com/).
-`npm install video.js`
-
-Update your webpack config loaders
+Import the stylesheets
+```html
+<link rel="stylesheet" src="/path/to/videojs.css" />
+<link rel="stylesheet" src="node_modules/@articulate/orson/dist/VideoPlayer.css" />
 ```
-{
-  test: /\.js$/,
-  loader: 'babel-loader',
-  include: path.join(__dirname, 'node_modules', '@articulate', 'orson')
-},
-{
-  test: /\.eot$/,
-  loader: 'url-loader'
-}
-```
-> Note: you may need to npm install the `url-loader` and it's dependent `file-loader`.
 
+or, if using webpack and sass-loader on your project
+
+```scss
+@import "~@articulate/orson/lib/index.webpack";
+```
 
 Import `VideoPlayer` into your component.
 ```
