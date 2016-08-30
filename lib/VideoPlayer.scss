@@ -70,6 +70,10 @@ $slider-height: 0.2em;
       margin: 0 0.5em;
     }
 
+    .vjs-progress-control {
+      margin: 0 2rem;
+    }
+
     // Time control
     .vjs-time-control {
       font-family: 'Lato', sans-serif;
@@ -80,12 +84,22 @@ $slider-height: 0.2em;
 
     // Slider
     .vjs-slider {
-      background-color: none;
-      margin: 0 1.5em;
-      height: $slider-height;
+      background-color: transparent;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      &:before {
+        content: '';
+        background-color: rgba(115,133,159,.5);
+        height: $slider-height;
+        width: 100%;
+      }
 
       .vjs-play-progress {
         height: $slider-height;
+        top: initial;
 
         // Scrubber grabber sizing (circle)
         &::before {
@@ -108,6 +122,15 @@ $slider-height: 0.2em;
 
       .vjs-load-progress {
         background-color: rgba($slider-bg-color, 0.3);
+        height: $slider-height;
+        top: initial;
+
+        div {
+          display: none;
+        }
+      }
+
+      .vjs-mouse-display {
         height: $slider-height;
       }
     }
