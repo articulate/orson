@@ -82,8 +82,8 @@ $slider-height: 0.2em;
       line-height: 6.35;
     }
 
-    // Slider
-    .vjs-slider {
+    // Seek Bar
+    .vjs-progress-holder {
       background-color: transparent;
       height: 100%;
       display: flex;
@@ -142,19 +142,21 @@ $slider-height: 0.2em;
 
       // Vertical Slider
       .vjs-menu-content {
+        background-color: rgba(0,0,0,0.5);
         bottom: 3em;
-        padding: 1rem 0;
+        padding: 1.4rem 0;
+      }
 
-        .vjs-slider {
-          height: 100%;
-          width: $slider-width;
+      .vjs-slider {
+        margin: 0 auto;
+        height: 100%;
+        width: $slider-width;
+      }
 
-          .vjs-volume-level {
-            width: $slider-width;
-            &::before {
-              left: -0.4em;
-            }
-          }
+      .vjs-volume-level {
+        width: $slider-width;
+        &::before {
+          left: -0.4em;
         }
       }
     }
