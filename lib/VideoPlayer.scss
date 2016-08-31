@@ -86,20 +86,32 @@ $slider-height: 0.2em;
     .vjs-progress-holder {
       background-color: transparent;
       height: 100%;
-      display: flex;
-      align-items: center;
       margin: 0;
 
       &:before {
         content: '';
-        background-color: rgba(115,133,159,.5);
+        position: absolute;
+        left: 0;
         height: $slider-height;
         width: 100%;
+        background-color: rgba(115,133,159,.5);
+      }
+
+      .vjs-load-progress {
+        background-color: rgba($slider-bg-color, 0.3);
+        height: $slider-height;
+
+        div {
+          display: none;
+        }
+      }
+
+      .vjs-mouse-display {
+        height: $slider-height;
       }
 
       .vjs-play-progress {
         height: $slider-height;
-        top: initial;
 
         // Scrubber grabber sizing (circle)
         &::before {
@@ -120,18 +132,12 @@ $slider-height: 0.2em;
         }
       }
 
-      .vjs-load-progress {
-        background-color: rgba($slider-bg-color, 0.3);
-        height: $slider-height;
-        top: initial;
-
-        div {
-          display: none;
-        }
-      }
-
-      .vjs-mouse-display {
-        height: $slider-height;
+      &:before,
+      .vjs-load-progress,
+      .vjs-mouse-display,
+      .vjs-play-progress {
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
