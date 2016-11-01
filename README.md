@@ -7,6 +7,12 @@ An Articulate flavored React component video player.
 `npm install @articulate/orson`
 
 ## Usage
+
+Bring your own `video.js`, or don't.  Orson will require `video.js` if `videojs` is not globally defined.
+```html
+<script src="http://vjs.zencdn.net/5.11.9/video.js"></script>
+```
+
 Import the stylesheets
 
 ```html
