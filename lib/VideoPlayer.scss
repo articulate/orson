@@ -11,6 +11,10 @@ $slider-height: 0.2em;
 .video-js {
   font-size: 10px;
   color: $primary-foreground-color;
+
+  & .vjs-control:before {
+      font-size: 2.2rem;
+    }
 }
 
 .vjs-default-skin {
