@@ -109,10 +109,12 @@ $slider-height: 0.2em;
 
       .vjs-mouse-display {
         height: $slider-height;
+        background: #fff;
       }
 
       .vjs-play-progress {
         height: $slider-height;
+        background: rgb(165, 165, 165);
 
         // Scrubber grabber sizing (circle)
         &::before {
