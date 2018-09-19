@@ -1,6 +1,6 @@
 {
   "name": "@articulate/orson",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "React video component with some Articulate flavor",
   "scripts": {
     "clean": "rm -rf dist",
