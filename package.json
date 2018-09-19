@@ -36,6 +36,7 @@
     "react": "^15.0.0"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "video.js": "5.12.6"
   },
   "peerDependencies": {
