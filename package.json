@@ -3,15 +3,20 @@
   "version": "1.2.4",
   "description": "React video component with some Articulate flavor",
   "scripts": {
+    "build": "npm run clean && npm run build:js && npm run build:styles",
+    "build:js": "babel lib --out-dir dist",
+    "build:styles": "node-sass lib/VideoPlayer.scss -o dist",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean",
-    "sass": "node-sass lib/VideoPlayer.scss -o dist",
-    "babel": "babel lib -d dist",
-    "build": "npm run babel && npm run sass",
-    "prepublish": "npm run build",
+    "lint": "eslint --ext .js .",
+    "prepublishOnly": "npm run lint && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "dist/VideoPlayer",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/articulate/orson.git"
@@ -27,19 +32,26 @@
   },
   "homepage": "https://github.com/articulate/orson#readme",
   "devDependencies": {
-    "babel-cli": "^6.14.0",
-    "babel-core": "^6.9.1",
-    "babel-plugin-transform-class-properties": "^6.11.5",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "node-sass": "^3.8.0",
-    "react": "^15.0.0"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "eslint": "^5.15.1",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-react": "^7.12.4",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "dependencies": {
-    "prop-types": "^15.6.2",
-    "video.js": "5.12.6"
+    "video.js": "^7.4.1"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
+    "prop-types": "^15.6.2",
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0 || ^16.0.0"
   }
 }
