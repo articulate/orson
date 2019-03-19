@@ -74,6 +74,17 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
   min-width: 5rem;
 }
 
+// Progress bar
+.video-js .vjs-progress-holder {
+  height: 0.2em;
+}
+
+// Progress bar draggable circle
+.video-js .vjs-play-progress::before {
+  font-size: 1.4em;
+  line-height: 0.9;
+}
+
 // Current time tooltip active state
 .video-js .vjs-progress-control:hover .vjs-time-tooltip,
 .video-js .vjs-progress-control:hover .vjs-progress-holder:focus .vjs-time-tooltip {
