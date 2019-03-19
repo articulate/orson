@@ -1,20 +1,9 @@
 $primary-foreground-color: #fff;
-$primary-background-color: rgba(0, 0, 0, .3);
-$slider-bg-color: #fff;
-$slider-height: 0.2em;
+$primary-background-color: rgba(0, 0, 0, 0.3);
 
 .videoContainer {
   position: relative;
   width: 100%;
-}
-
-.video-js {
-  font-size: 10px;
-  color: $primary-foreground-color;
-
-  & .vjs-control:before {
-      font-size: 2.2rem;
-    }
 }
 
 .vjs-default-skin {
@@ -24,170 +13,91 @@ $slider-height: 0.2em;
   width: 100% !important;
   height: 100% !important;
 
-  // Big Play Button
-  .vjs-big-play-button {
-    $big-btn-size: 9.8rem;
-
-    font-size: 4em;
-
-    line-height: $big-btn-size;
-    height: $big-btn-size;
-    width: $big-btn-size;
-
-    background-color: $primary-background-color;
-
-    border: none;
-    border-radius: 50%;
-
-    top: 50%;
-    left: 50%;
-
-    margin-top: -($big-btn-size / 2);
-    margin-left: -($big-btn-size / 2);
-
-  }
-
   // Show big play onPause
   &.vjs-paused.vjs-has-started .vjs-big-play-button {
     display: block;
   }
+}
 
-  // Control Bar - show onPlay and onPause
-  &.vjs-has-started .vjs-control-bar {
-    background-color: $primary-background-color;
-    display: flex;
-    height: 7.5em;
+.video-js {
+  font-size: 10px;
+  color: $primary-foreground-color;
+}
 
-    // Button icon sizing
-    .vjs-button {
-      font-size: 1.2em;
-      &::before {
-        line-height: 3.5;
-      }
-    }
+// Big play button
+.video-js .vjs-big-play-button {
+  $big-btn-size: 9.8rem;
 
-    // Control bar button sizing
-    .vjs-control {
-      margin: 0 0.5em;
-    }
+  font-size: 4em;
+  line-height: $big-btn-size;
+  height: $big-btn-size;
+  width: $big-btn-size;
+  background-color: $primary-background-color;
+  border: none;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: -($big-btn-size / 2);
+  margin-left: -($big-btn-size / 2);
+}
 
-    .vjs-progress-control {
-      margin: 0 2rem;
-    }
+// Control bar
+.video-js .vjs-control-bar {
+  display: flex;
+  height: 7.5em;
+  background-color: $primary-background-color;
+}
 
-    // Time control
-    .vjs-time-control {
-      font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      font-size: 1.2em;
-      line-height: 6.35;
-    }
+// Volume
+.video-js .vjs-volume-panel,
+.video-js .vjs-volume-control {
+  align-items: center;
+}
 
-    // Seek Bar
-    .vjs-progress-holder {
-      background-color: transparent;
-      height: 100%;
-      margin: 0;
+// Time
+.video-js .vjs-time-control {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 6.35;
+}
 
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        height: $slider-height;
-        width: 100%;
-        background-color: rgba(115,133,159,.5);
-      }
+// Current time tooltip
+.video-js .vjs-time-tooltip {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  background-color: rgba(49, 53, 55, .6);
+  border-radius: 2em;
+  color: $primary-foreground-color;
+  font-size: 1.2rem;
+  padding: 0.2em 1em;
+  min-width: 5rem;
+}
 
-      .vjs-load-progress {
-        background-color: rgba($slider-bg-color, 0.3);
-        height: $slider-height;
+// Current time tooltip active state
+.video-js .vjs-progress-control:hover .vjs-time-tooltip,
+.video-js .vjs-progress-control:hover .vjs-progress-holder:focus .vjs-time-tooltip {
+  font-size: 1.2rem;
 
-        div {
-          display: none;
-        }
-      }
-
-      .vjs-mouse-display {
-        height: $slider-height;
-        background: #fff;
-      }
-
-      .vjs-play-progress {
-        height: $slider-height;
-        background: rgb(165, 165, 165);
-
-        // Scrubber grabber sizing (circle)
-        &::before {
-          font-size: 1.4em;
-          line-height: 0.9;
-        }
-
-        // Scrubber time display
-        &::after {
-          font-family: 'Lato', sans-serif;
-          font-weight: 700;
-          background-color: rgba(49, 53, 55, .6);
-          border-radius: 2em;
-          color: $primary-foreground-color;
-          font-size: 1.2rem;
-          padding: 0.2em 1em;
-          min-width: 5rem;
-        }
-      }
-
-      &:before,
-      .vjs-load-progress,
-      .vjs-mouse-display,
-      .vjs-play-progress {
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-
-    // Volume Control
-    .vjs-volume-menu-button {
-      $slider-width: 2px;
-      order: 3;
-
-      // Vertical Slider
-      .vjs-menu-content {
-        background-color: rgba(0,0,0,0.5);
-        bottom: 3em;
-        padding: 1.4rem 0;
-      }
-
-      .vjs-slider {
-        margin: 0 auto;
-        height: 100%;
-        width: $slider-width;
-      }
-
-      .vjs-volume-level {
-        width: $slider-width;
-        &::before {
-          left: -0.4em;
-        }
-      }
-    }
-
-    // Overrides
-    // Disable onFocus button highlighting
-    .vjs-control:focus::before,
-    .vjs-control:hover::before,
-    .vjs-control:focus {
-      text-shadow: none;
-    }
-
-    .vjs-progress-control:hover {
-      // Disable scrubber time
-      .vjs-mouse-display::after {
-        visibility: hidden;
-      }
-
-      // Disable zoom onHover
-      .vjs-progress-holder {
-        font-size: inherit;
-      }
-    }
+  // Fix hover showing empty div
+  &:empty {
+    display: none;
   }
+}
+
+// Control bar icon size & vertical placement
+.vjs-button > .vjs-icon-placeholder::before {
+  font-size: 2.2em;
+  line-height: 3.5;
+}
+
+// Disable progress bar zoom on hover
+.video-js .vjs-progress-control:hover .vjs-progress-holder {
+  font-size: inherit;
+}
+
+// Disable slider focus shadows
+.video-js .vjs-slider:focus {
+  text-shadow: none;
+  box-shadow: none;
 }
