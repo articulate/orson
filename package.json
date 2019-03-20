@@ -25,7 +25,7 @@
     "react",
     "video.js"
   ],
-  "author": "Articulate",
+  "author": "Articulate Global, Inc. <engineering@articulate.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/articulate/orson/issues"
