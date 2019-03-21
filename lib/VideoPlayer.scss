@@ -47,10 +47,36 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
   background-color: $primary-background-color;
 }
 
-// Volume
-.video-js .vjs-volume-panel,
-.video-js .vjs-volume-control {
-  align-items: center;
+// Control bar items (not control)
+.video-js .vjs-control.vjs-play-control,
+.video-js .vjs-control.vjs-volume-panel,
+.video-js .vjs-control.vjs-remaining-time,
+.video-js .vjs-control.vjs-fullscreen-control {
+  margin: 0 0.5em;
+}
+
+// Control bar progress
+.video-js .vjs-control.vjs-progress-control {
+  margin: 0 2em;
+}
+
+// Volume control
+.vjs-volume-panel {
+  order: 3;
+}
+
+// Vertical volume container
+.video-js .vjs-volume-vertical {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 6em;
+}
+
+// Vertical volume track
+.vjs-slider-vertical .vjs-volume-level {
+  width: 0.2em;
+  &::before {
+    left: -0.4em;
+  }
 }
 
 // Time
@@ -82,6 +108,7 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 .video-js .vjs-play-progress::before {
   font-size: 1.4em;
   line-height: 0.9;
+  top: -0.4em;
 }
 
 // Current time tooltip active state
