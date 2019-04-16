@@ -28,7 +28,7 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 .video-js .vjs-big-play-button {
   $big-btn-size: 9.8rem;
 
-  font-size: 4em;
+  font-size: 4rem;
   line-height: $big-btn-size;
   height: $big-btn-size;
   width: $big-btn-size;
@@ -43,7 +43,7 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 
 // Control bar
 .video-js .vjs-control-bar {
-  height: 7.5em;
+  height: 7.5rem;
   background-color: $primary-background-color;
 }
 
@@ -52,12 +52,12 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 .video-js .vjs-control.vjs-volume-panel,
 .video-js .vjs-control.vjs-remaining-time,
 .video-js .vjs-control.vjs-fullscreen-control {
-  margin: 0 0.5em;
+  margin: 0 0.5rem;
 }
 
 // Control bar progress
 .video-js .vjs-control.vjs-progress-control {
-  margin: 0 2em;
+  margin: 0 2rem;
 }
 
 // Volume control
@@ -68,14 +68,14 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 // Vertical volume container
 .video-js .vjs-volume-vertical {
   background-color: rgba(0, 0, 0, 0.5);
-  bottom: 6em;
+  bottom: 6rem;
 }
 
 // Vertical volume track
 .vjs-slider-vertical .vjs-volume-level {
-  width: 0.2em;
+  width: 0.2rem;
   &::before {
-    left: -0.4em;
+    left: -0.4rem;
   }
 }
 
@@ -83,7 +83,7 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 .video-js .vjs-time-control {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   line-height: 6.35;
 }
 
@@ -92,23 +92,23 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   background-color: rgba(49, 53, 55, .6);
-  border-radius: 2em;
+  border-radius: 2rem;
   color: $primary-foreground-color;
   font-size: 1.2rem;
-  padding: 0.2em 1em;
+  padding: 0.2em 1rem;
   min-width: 5rem;
 }
 
 // Progress bar
 .video-js .vjs-progress-holder {
-  height: 0.2em;
+  height: 0.2rem;
 }
 
 // Progress bar draggable circle
 .video-js .vjs-play-progress::before {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   line-height: 0.9;
-  top: -0.4em;
+  top: -0.4rem;
 }
 
 // Current time tooltip active state

@@ -10,20 +10,21 @@ An Articulate flavored React component video player.
 Import the stylesheets
 
 ```html
-<link rel="stylesheet" src="/path/to/videojs.css" />
+<link rel="stylesheet" src="node_modules/video.js/dist/video-js.css" />
 <link rel="stylesheet" src="node_modules/@articulate/orson/dist/VideoPlayer.css" />
 ```
 
 or, if using webpack and sass-loader on your project
 
 ```scss
-@import "~@articulate/orson/lib/index.webpack";
+@import '~video.js/src/dist/video-js.css';
+@import '~@articulate/orson/dist/VideoPlayer';
 ```
 
 Import `VideoPlayer` into your component.
 
 ```jsx
-import VideoPlayer from '@articulate/orson';
+import VideoPlayer from '@articulate/orson'
 
 <VideoPlayer>
   <source src="__path_to_mp4__" type="video/mp4" />
@@ -33,6 +34,9 @@ import VideoPlayer from '@articulate/orson';
   </p>
 </VideoPlayer>
 ```
+
+Note: this library works off of the assumption that your root font size is 10px
+(62.5%). More on this can be found at https://snook.ca/archives/html_and_css/font-size-with-rem.
 
 ## API
 
@@ -66,3 +70,9 @@ This plugin used to require setting up exceptions in webpack's config loaders se
 
   [vjs-options]: http://docs.videojs.com/docs/guides/options.html#component-options
   [vjs-player-api]: http://docs.videojs.com/docs/api/player.html#methods
+
+## Additional Resources
+* [`Authors`](./AUTHORS)
+* [`Browser Support`](./.browserslistrc)
+* [`Contributing`](./CONTRIBUTING.md)
+* [`Code of Conduct`](./CODE_OF_CONDUCT.md)
