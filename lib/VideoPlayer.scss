@@ -60,9 +60,19 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
   margin: 0 2rem;
 }
 
+.video-js .vjs-control:focus:before,
+.video-js .vjs-control:hover:before,
+.video-js .vjs-control:focus {
+  text-shadow: none;
+}
+
 // Volume control
 .vjs-volume-panel {
   order: 3;
+}
+
+.video-js .vjs-volume-panel .vjs-volume-control.vjs-volume-vertical {
+  transition: none;
 }
 
 // Vertical volume container
@@ -71,11 +81,17 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
   bottom: 6rem;
 }
 
-// Vertical volume track
+// Vertical volume track container
+.vjs-volume-bar.vjs-slider-vertical {
+  width: 0.2rem;
+}
+
+// Vertical volume track level
 .vjs-slider-vertical .vjs-volume-level {
   width: 0.2rem;
   &::before {
-    left: -0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -108,7 +124,8 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 .video-js .vjs-play-progress::before {
   font-size: 1.4rem;
   line-height: 0.9;
-  top: -0.4rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 // Current time tooltip active state
