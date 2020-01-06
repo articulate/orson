@@ -65,6 +65,21 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
   order: 3;
 }
 
+.vjs-volume-panel.vjs-volume-panel-horizontal {
+  align-items: center;
+
+  & .vjs-volume-control.vjs-control.vjs-volume-horizontal {
+    &, &:hover, .video-js .vjs-volume-panel .vjs-mute-control:hover ~ & {
+      height: auto !important;
+    }
+
+    & .vjs-volume-bar {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
 // Vertical volume container
 .video-js .vjs-volume-vertical {
   background-color: rgba(0, 0, 0, 0.5);
