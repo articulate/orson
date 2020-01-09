@@ -22,6 +22,11 @@ $primary-background-color: rgba(0, 0, 0, 0.3);
 .video-js {
   font-size: 10px;
   color: $primary-foreground-color;
+  background-color: unset;
+}
+
+.vjs-poster {
+  background-color: unset;
 }
 
 // Big play button
