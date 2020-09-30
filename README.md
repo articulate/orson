@@ -64,5 +64,32 @@ This plugin used to require setting up exceptions in webpack's config loaders se
 1. Import the CSS. Previously, stylesheets would be imported automatically with sass-loader. That's no longer the case.
 1. Change imports from `import VideoPlayer from '@articulate/orson/lib/VideoPlayer'` to `import VideoPlayer from '@articulate/orson'`
 
-  [vjs-options]: http://docs.videojs.com/docs/guides/options.html#component-options
-  [vjs-player-api]: http://docs.videojs.com/docs/api/player.html#methods
+## A11y Contrast Updates
+
+A number of changes have been made to the styling of the player to clear up some reported contrast concerns. These changes
+resolve a number of contrast concerns by doing the following:
+
+* Increase the opacity of the various control container.
+* Create a distinguishable edge between interactive controls and content
+* Provide a darker background, with increasing the lightness of the icons, to match a 3:1 contrast ratio
+* Replaces the text-shadow on focus/hover with a control edge glow that defines the edge of the control.
+
+In order to allow for continued updates to the player, these changes are opt-in by default. The player will
+only apply these changes when the player is contained within an element, classed with the `.video-a11y` class:
+
+```jsx
+import VideoPlayer from '@articulate/orson';
+
+<div className="video-a11y">
+  <VideoPlayer>
+    <source src="__path_to_mp4__" type="video/mp4" />
+    <source src="__path_to_format__" type="video/format" />
+    <p>
+      Custom Error Message
+    </p>
+  </VideoPlayer>
+<div>
+```
+
+[vjs-options]: http://docs.videojs.com/docs/guides/options.html#component-options
+[vjs-player-api]: http://docs.videojs.com/docs/api/player.html#methods
