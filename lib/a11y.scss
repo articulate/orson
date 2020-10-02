@@ -1,0 +1,184 @@
+$a11y-background-color: rgba(0, 0, 0, 0.67);
+
+$a11y-glow-start-color: rgba(255, 255, 255, 0.5);
+$a11y-glow-end-color: rgba(255, 255, 255, 0.1);
+
+@mixin focus-glow {
+  background-color: $a11y-background-color;
+  text-shadow: none;
+  overflow: visible; // for ie11
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    z-index: 0;
+  }
+
+  &::before {
+    background: linear-gradient(-90deg, $a11y-glow-start-color, $a11y-glow-end-color);
+    left: -4px;
+  }
+
+  &::after {
+    background: linear-gradient(90deg, $a11y-glow-start-color, $a11y-glow-end-color);
+    right: -4px;
+  }
+}
+
+@mixin volume-control-glow {
+  border-radius: 3px;
+  box-shadow: 0 0 4px #fff;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+.video-a11y {
+  .vjs-big-play-button {
+    background-color: $a11y-background-color;
+  }
+
+  .vjs-paused {
+    cursor: pointer;
+
+    .vjs-control-bar {
+      cursor: auto;
+    }
+  }
+
+  // applies when parent is hovered and/or big play is focused
+  .vjs-big-play-button:focus,
+  &:hover .vjs-big-play-button {
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 4px #fff;
+  }
+
+  .vjs-control-bar {
+    background-color: $a11y-background-color;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    &::before {
+      top: -4px;
+      background: linear-gradient(0deg, $a11y-glow-start-color, $a11y-glow-end-color);
+    }
+
+    &::after {
+      bottom: -4px;
+      background: linear-gradient(180deg, $a11y-glow-start-color, $a11y-glow-end-color);
+    }
+
+    .vjs-control {
+      &:focus,
+      &:hover {
+        @include focus-glow;
+      }
+
+      &.vjs-progress-control.focus-within,
+      &.vjs-playback-rate.focus-within,
+      &.vjs-volume-panel.focus-within,
+      &.vjs-subs-caps-button.focus-within {
+        @include focus-glow;
+      }
+
+      &.vjs-progress-control:focus-within,
+      &.vjs-playback-rate:focus-within,
+      &.vjs-volume-panel:focus-within,
+      &.vjs-subs-caps-button:focus-within {
+        @include focus-glow;
+      }
+
+      &:first-child {
+        margin-left: 0;
+
+        &::before {
+          content: none;
+        }
+      }
+
+      &.vjs-playback-rate,
+      &.vjs-picture-in-picture-control,
+      &.vjs-subs-caps-button {
+        margin: 0 0.5em;
+      }
+    }
+
+    .vjs-menu-button.vjs-hover {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    .vjs-volume-panel {
+      margin-right: 0;
+
+      &.vjs-control:focus-within {
+        &::after {
+          content: none;
+        }
+      }
+
+      &.vjs-control:hover,
+      &.vjs-control.focus-within {
+        &::after {
+          content: none;
+        }
+      }
+
+      .vjs-mute-control:focus {
+        &::before,
+        &::after {
+          content: none;
+        }
+      }
+
+      .vjs-volume-control {
+        &:hover,
+        &.focus-within {
+          @include volume-control-glow;
+        }
+
+        &:focus-within {
+          @include volume-control-glow;
+        }
+
+        &.vjs-volume-horizontal {
+          margin-left: 0.5em;
+          height: 3em;
+          transition: visibility 1s,opacity 1s,width 1s,left 1s 1s,top 1s 1s;
+        }
+      }
+    }
+
+    .vjs-time-control:hover {
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    .vjs-menu {
+      z-index: 1;
+    }
+
+    .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  }
+}

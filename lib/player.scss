@@ -1,0 +1,155 @@
+$primary-foreground-color: #fff;
+$primary-background-color: rgba(0, 0, 0, 0.3);
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+}
+
+.vjs-default-skin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+
+  // Show big play onPause
+  &.vjs-paused.vjs-has-started .vjs-big-play-button {
+    display: block;
+  }
+}
+
+.video-js {
+  font-size: 10px;
+  color: $primary-foreground-color;
+}
+
+// Big play button
+.video-js .vjs-big-play-button {
+  $big-btn-size: 9.8rem;
+
+  font-size: 4em;
+  line-height: $big-btn-size;
+  height: $big-btn-size;
+  width: $big-btn-size;
+  background-color: $primary-background-color;
+  border: none;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: -($big-btn-size / 2);
+  margin-left: -($big-btn-size / 2);
+}
+
+// Control bar
+.video-js .vjs-control-bar {
+  height: 7.5em;
+  background-color: $primary-background-color;
+}
+
+// Control bar items (not control)
+.video-js .vjs-control.vjs-play-control,
+.video-js .vjs-control.vjs-volume-panel,
+.video-js .vjs-control.vjs-remaining-time,
+.video-js .vjs-control.vjs-fullscreen-control {
+  margin: 0 0.5em;
+}
+
+// Control bar progress
+.video-js .vjs-control.vjs-progress-control {
+  margin: 0 2em;
+}
+
+// Volume control
+.vjs-volume-panel {
+  order: 3;
+}
+
+.vjs-volume-panel.vjs-volume-panel-horizontal {
+  align-items: center;
+
+  & .vjs-volume-control.vjs-control.vjs-volume-horizontal {
+    &, &:hover, .video-js .vjs-volume-panel .vjs-mute-control:hover ~ & {
+      height: auto !important;
+    }
+
+    & .vjs-volume-bar {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Vertical volume container
+.video-js .vjs-volume-vertical {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 6em;
+}
+
+// Vertical volume track
+.vjs-slider-vertical .vjs-volume-level {
+  width: 0.2em;
+  &::before {
+    left: -0.4em;
+  }
+}
+
+// Time
+.video-js .vjs-time-control {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 6.35;
+}
+
+// Current time tooltip
+.video-js .vjs-time-tooltip {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  background-color: rgba(49, 53, 55, .6);
+  border-radius: 2em;
+  color: $primary-foreground-color;
+  font-size: 1.2rem;
+  padding: 0.2em 1em;
+  min-width: 5rem;
+}
+
+// Progress bar
+.video-js .vjs-progress-holder {
+  height: 0.2em;
+}
+
+// Progress bar draggable circle
+.video-js .vjs-play-progress::before {
+  font-size: 1.4em;
+  line-height: 0.9;
+  top: -0.4em;
+}
+
+// Current time tooltip active state
+.video-js .vjs-progress-control:hover .vjs-time-tooltip,
+.video-js .vjs-progress-control:hover .vjs-progress-holder:focus .vjs-time-tooltip {
+  font-size: 1.2rem;
+
+  // Fix hover showing empty div
+  &:empty {
+    display: none;
+  }
+}
+
+// Control bar icon size & vertical placement
+.vjs-button > .vjs-icon-placeholder::before {
+  font-size: 2.2rem;
+  line-height: 3.5;
+}
+
+// Disable progress bar zoom on hover
+.video-js .vjs-progress-control:hover .vjs-progress-holder {
+  font-size: inherit;
+}
+
+// Disable slider focus shadows
+.video-js .vjs-slider:focus {
+  text-shadow: none;
+  box-shadow: none;
+}
