@@ -1,6 +1,6 @@
 {
   "name": "@articulate/orson",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "React video component with some Articulate flavor",
   "scripts": {
     "build": "npm run clean && npm run build:js && npm run build:styles",
