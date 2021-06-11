@@ -1,4 +1,4 @@
-# Orson [![NSP Status](https://nodesecurity.io/orgs/articulate/projects/b1ab5729-5cba-4672-a2f9-2f047db32b86/badge)](https://nodesecurity.io/orgs/articulate/projects/b1ab5729-5cba-4672-a2f9-2f047db32b86)
+# Orson
 
 An Articulate flavored React component video player.
 
